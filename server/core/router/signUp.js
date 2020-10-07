@@ -1,7 +1,6 @@
+const signUp = require("../controllers/signUp/signUp");
 const router = require("express").Router();
 
-router.get("/", (req, res) => {
-    res.status(200).json("Success");
-});
+router.post("/api/signup", signUp);
 
 module.exports = router;
