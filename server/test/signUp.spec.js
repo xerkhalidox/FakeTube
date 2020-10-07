@@ -28,7 +28,7 @@ describe("Testing POST /api/signup", () => {
             const response = await makeRequest();
             expect(response.status)
                 .to
-                .equal(200);
+                .equal(201);
             expect(response.body.success)
                 .to
                 .equal("Registeration Successfully");
