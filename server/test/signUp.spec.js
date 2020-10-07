@@ -7,7 +7,7 @@ const request = supertest(app);
 // function that makes the request to the server
 //will be used in tests below
 const makeRequest = () => {
-    return request / y
+    return request
         .post('/api/signup')
         .send({
             first_name: "myfirstname",
@@ -35,7 +35,7 @@ describe("Testing POST /api/signup", () => {
         } catch (err) {
             expect.fail(err);
         }
-    }).timeout(10000);
+    }).timeout(5000);
     it('is not conflicted', async () => {
         try {
             //this user is already existed
@@ -50,7 +50,7 @@ describe("Testing POST /api/signup", () => {
         } catch (err) {
             expect.fail(err);
         }
-    }).timeout(10000);
+    }).timeout(5000);
     it('no internal error', async () => {
         try {
             const response = await makeRequest();
@@ -63,5 +63,5 @@ describe("Testing POST /api/signup", () => {
         } catch (err) {
             expect.fail(err);
         }
-    }).timeout(10000);
+    }).timeout(5000);
 });
